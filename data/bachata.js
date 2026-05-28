@@ -13,7 +13,7 @@ export const bachataData = {
       "Descubre el ritmo latino que está conquistando las pistas de baile. Clases dinámicas para todos los niveles, con profesores experimentados y un ambiente acogedor. No necesitas pareja previa.",
     formTitle: "Apúntate a nuestras clases",
     ctaText: "Apuntarme a clases de Bachata",
-    backgroundImage: "/assets/images/imagen-bachata-1-modified.jpg",
+    backgroundImage: "/assets/images/imagen-bachata-4.jpg",
   },
   method: {
     sectionLabel: "El Método Palladium",
@@ -25,19 +25,19 @@ export const bachataData = {
         icon: "lightning",
         title: "Bachata Fluida y Rápida",
         description:
-          "Dominar los tiempos de la bachata es fácil si te lo explican bien. Con nuestro sistema aprenderás a moverte de forma natural, asimilando el ritmo musical paso a paso y sin frustraciones.",
+          "Aprende a guiar, seguir y sentir el ritmo de la bachata de forma natural con un método eficaz y ameno.",
       },
       {
         icon: "shield",
         title: "Ambiente Seguro y Respetuoso",
         description:
-          "Disfrutar de los ritmos latinos requiere confianza mutua. Basamos nuestra filosofía en la honestidad, el trato amable y el respeto absoluto a la voluntad de tu pareja de baile.",
+          "Una escuela fundada en el respeto, la honestidad y el trato amable para que disfrutes con total tranquilidad.",
       },
       {
         icon: "clock",
         title: "Flexibilidad Horaria",
         description:
-          "Adaptamos nuestros horarios de lunes a viernes (19:00 a 23:00) para que encuentres el grupo ideal de bachata que encaje a la perfección con tu vida laboral y personal.",
+          "Amplia variedad de grupos de lunes a viernes (19:00 a 23:00) para que desconectes al salir de trabajar.",
       },
     ],
   },

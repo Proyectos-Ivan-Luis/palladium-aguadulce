@@ -35,11 +35,11 @@ export default function SalsaPage() {
           sharedLocations={sharedData.locations} 
         />
 
-        {/* 3. El Método Palladium: ¿Por qué nosotros? */}
-        <Method method={salsaData.method} />
-
         {/* 4. Prueba Social y Números (Validación) */}
         <SocialProof socialProof={salsaData.socialProof} />
+
+        {/* 3. El Método Palladium: ¿Por qué nosotros? */}
+        <Method method={salsaData.method} />
 
         {/* 5. Dónde estamos y Horarios (Proximidad Local) */}
         <Locations locations={sharedData.locations} />

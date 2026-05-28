@@ -1051,3 +1051,48 @@ ol {
     /* Desktop: desplaza la pareja a la derecha para acompañar el formulario */
   }
 }
+
+/* ==============================
+   CUSTOM BUTTON & HEADER ADJUSTMENTS
+   ============================== */
+.header-whatsapp {
+  font-size: 0.75rem !important;
+  padding: 0.45rem 0.85rem !important;
+  gap: 0.35rem !important;
+  border-radius: var(--radius-full) !important;
+}
+
+.header-whatsapp svg {
+  width: 14px !important;
+  height: 14px !important;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.header-whatsapp-desktop {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .header-whatsapp {
+    font-size: 0.875rem !important;
+    padding: 0.6rem 1.1rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .header-whatsapp svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .header-whatsapp-desktop {
+    display: inline;
+  }
+}
+
+.hero-web-btn:hover {
+  background: var(--white) !important;
+  color: var(--black) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}

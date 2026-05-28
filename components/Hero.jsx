@@ -100,6 +100,44 @@ export default function Hero({ hero, discipline, sharedLocations }) {
             {hero.heading} <em>{hero.headingAccent}</em> {hero.headingSuffix}
           </h1>
           <h2>{hero.subheading}</h2>
+          <div style={{ marginBottom: '2.2rem' }}>
+            <a 
+              href="https://palladiumsalsa.es/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn hero-web-btn"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                border: '1.5px solid var(--white)',
+                color: 'var(--white)',
+                background: 'transparent',
+                padding: '0.8rem 1.6rem',
+                fontSize: '0.95rem',
+                borderRadius: 'var(--radius-md)',
+                fontWeight: '600',
+                transition: 'all var(--transition-fast)'
+              }}
+            >
+              Ver página web
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                style={{ marginLeft: '8px' }}
+              >
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
         </div>
 
         <div className="hero-form-wrapper">

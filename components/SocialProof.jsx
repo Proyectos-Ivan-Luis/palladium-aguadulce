@@ -157,6 +157,16 @@ export default function SocialProof({ socialProof }) {
             </div>
           ))}
         </div>
+
+        {/* Botón de conversión intermedio */}
+        <div style={{ textAlign: 'center', marginTop: 'var(--space-xl)' }}>
+          <a 
+            href="#hero-form-section" 
+            className="btn btn-cta"
+          >
+            Únete a la familia Palladium
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -25,19 +25,19 @@ export const salsaData = {
         icon: "lightning",
         title: "Salsa Eficaz y Rápida",
         description:
-          "Olvídate de contar pasos sin sentido. Te enseñamos con tips musicales específicos para que aprendas a reconocer el ritmo de la salsa rápido y de manera amena.",
+          "Siente la música desde el primer día. Aprende a reconocer el tiempo de la salsa de manera rápida, fluida y sin frustraciones.",
       },
       {
         icon: "shield",
         title: "Ambiente Seguro y Respetuoso",
         description:
-          "En nuestra escuela de baile el respeto es ley. Inculcamos valores de trato amable, higiene corporal y cuidado mutuo para que te sientas cómodo en cada canción.",
+          "Cuidamos al detalle el trato amable y la higiene corporal en la pista para garantizar un ambiente seguro y agradable para todos.",
       },
       {
         icon: "clock",
         title: "Flexibilidad Horaria",
         description:
-          "Clases de lunes a viernes en horario de tarde y noche (19:00 a 23:00). Ideal para desconectar de la rutina diaria al salir del trabajo.",
+          "Amplia variedad de grupos de lunes a viernes (19:00 a 23:00) para que desconectes al salir de trabajar.",
       },
     ],
   },
