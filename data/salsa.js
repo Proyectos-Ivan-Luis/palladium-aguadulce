@@ -6,14 +6,14 @@ export const salsaData = {
   },
   discipline: "Salsa",
   hero: {
-    heading: "¿Buscas clases de salsa en Roquetas de Mar o El Ejido?",
+    // heading: "¿Buscas clases de salsa en Roquetas de Mar o El Ejido?",
     headingAccent: "Aprende",
-    headingSuffix: "a bailar con el Método Palladium.",
+    headingSuffix: "a bailar con el Método Palladium",
     subheading:
-      "La escuela de salsa pensada para personas que empiezan desde cero. Clases divertidas, dinámicas y sin necesidad de traer pareja. ¡Acepta el desafío y empieza a disfrutar esta misma semana!",
+      "¿Buscas clases de salsa en Roquetas de Mar o El Ejido? La escuela de salsa pensada para personas que empiezan desde cero. Clases divertidas, dinámicas y sin necesidad de traer pareja. ¡Acepta el desafío y empieza a disfrutar esta misma semana!",
     formTitle: "Apúntate a nuestras clases",
     ctaText: "Apuntarme a clases de Salsa",
-    backgroundImage: "/img/hero-salsa.webp",
+    backgroundImage: "/assets/images/hero-salsa.png",
   },
   method: {
     sectionLabel: "El Método Palladium",

@@ -20,11 +20,11 @@ function Counter({ endValue, suffix }) {
           const animate = (currentTime) => {
             const elapsedTime = currentTime - startTime;
             const progress = Math.min(elapsedTime / duration, 1);
-            
+
             // Función de easing out cuadratica
             const easeOutQuad = progress * (2 - progress);
             const currentValue = Math.floor(easeOutQuad * endValue);
-            
+
             setCount(currentValue);
 
             if (progress < 1) {
@@ -85,8 +85,48 @@ export default function SocialProof({ socialProof }) {
           ))}
         </div>
 
+        {/* Botón intermedio: Conoce nuestros eventos (Estilo outline oscuro para fondo claro) */}
+        <div style={{ textAlign: 'center', marginTop: '1rem', marginBottom: '2.5rem' }}>
+          <a
+            href="https://palladiumsalsa.es/eventos/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn hero-web-btn"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              border: '1.5px solid var(--black)',
+              color: 'var(--black)',
+              background: 'transparent',
+              padding: '0.65rem 1.4rem',
+              fontSize: '0.9rem',
+              borderRadius: 'var(--radius-md)',
+              fontWeight: '600',
+              transition: 'all var(--transition-fast)'
+            }}
+          >
+            Conoce nuestros eventos
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ marginLeft: '8px' }}
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+
         {/* Foto de la comunidad real en escala de grises */}
-        <div 
+        <div
           style={{
             width: '100%',
             height: '340px',
@@ -101,9 +141,9 @@ export default function SocialProof({ socialProof }) {
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/assets/images/imagen-bachata-2.jpg" 
-            alt="Comunidad Palladium bailando salsa y bachata" 
+          <img
+            src="/assets/images/imagen-bachata-2.jpg"
+            alt="Comunidad Palladium bailando salsa y bachata"
             style={{
               width: '100%',
               height: '100%',
@@ -114,7 +154,7 @@ export default function SocialProof({ socialProof }) {
             }}
           />
           {/* Overlay gradiente premium B&W */}
-          <div 
+          <div
             style={{
               position: 'absolute',
               inset: 0,
@@ -160,8 +200,8 @@ export default function SocialProof({ socialProof }) {
 
         {/* Botón de conversión intermedio */}
         <div style={{ textAlign: 'center', marginTop: 'var(--space-xl)' }}>
-          <a 
-            href="#hero-form-section" 
+          <a
+            href="#hero-form-section"
             className="btn btn-cta"
           >
             Únete a la familia Palladium

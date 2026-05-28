@@ -6,14 +6,14 @@ export const bachataData = {
   },
   discipline: "Bachata",
   hero: {
-    heading: "Clases de bachata en Roquetas de Mar y El Ejido.",
+    //heading: "Clases de bachata en Roquetas de Mar y El Ejido.",
     headingAccent: "Aprende",
     headingSuffix: "a bailar desde cero con el Método Palladium.",
     subheading:
-      "Descubre el ritmo latino que está conquistando las pistas de baile. Clases dinámicas para todos los niveles, con profesores experimentados y un ambiente acogedor. No necesitas pareja previa.",
+      "Descubre el ritmo latino que está conquistando las pistas de baile. Clases dinámicas en Roquetas de Mar y El Ejido para todos los niveles, con profesores experimentados y un ambiente acogedor. No necesitas pareja previa.",
     formTitle: "Apúntate a nuestras clases",
     ctaText: "Apuntarme a clases de Bachata",
-    backgroundImage: "/assets/images/imagen-bachata-4.jpg",
+    backgroundImage: "/assets/images/hero-bachata.png",
   },
   method: {
     sectionLabel: "El Método Palladium",

@@ -42,8 +42,8 @@ export default function Hero({ hero, discipline, sharedLocations }) {
     <section className="hero" id="hero-form-section">
       <div className="hero-bg" style={{ backgroundColor: '#0A0A0A', position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 1 }}>
         {/* Patrón de cuadrícula / Grid acromático de fondo constante */}
-        <div 
-          style={{ 
+        <div
+          style={{
             backgroundImage: `radial-gradient(rgba(255,255,255,0.08) 1.5px, transparent 1.5px)`,
             backgroundSize: '32px 32px',
             width: '100%',
@@ -51,13 +51,13 @@ export default function Hero({ hero, discipline, sharedLocations }) {
             position: 'absolute',
             inset: 0,
             zIndex: 1
-          }} 
+          }}
         />
         {/* Imagen de fondo real si está definida, superpuesta en zIndex 2 */}
         {hero.backgroundImage && (
-          <div 
-            className="hero-bg-image" 
-            style={{ 
+          <div
+            className="hero-bg-image"
+            style={{
               backgroundImage: `url("${hero.backgroundImage}")`,
               position: 'absolute',
               inset: 0,
@@ -66,7 +66,7 @@ export default function Hero({ hero, discipline, sharedLocations }) {
             }}
           />
         )}
-        
+
         {/* Leyenda discreta de fondo premium si no hay foto */}
         {!hero.backgroundImage && (
           <div style={{
@@ -87,13 +87,13 @@ export default function Hero({ hero, discipline, sharedLocations }) {
           </div>
         )}
       </div>
-      
+
       {/* El overlay debe estar en zIndex 3 pero detras del contenido (que estará en zIndex 10) */}
       <div className="hero-overlay" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65))', position: 'absolute', inset: 0, zIndex: 3, pointerEvents: 'none' }}></div>
 
       <div className="hero-content" style={{ position: 'relative', zIndex: 10 }}>
         <div className="hero-text">
-          <span className="text-caption" style={{ color: 'var(--accent-cta)', marginBottom: '1rem', display: 'inline-block' }}>
+          <span className="text-caption" style={{ color: 'var(--gray-200)', marginBottom: '1rem', display: 'inline-block' }}>
             Aprende con los mejores
           </span>
           <h1>
@@ -101,10 +101,10 @@ export default function Hero({ hero, discipline, sharedLocations }) {
           </h1>
           <h2>{hero.subheading}</h2>
           <div style={{ marginBottom: '2.2rem' }}>
-            <a 
-              href="https://palladiumsalsa.es/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://palladiumsalsa.es/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn hero-web-btn"
               style={{
                 display: 'inline-flex',
@@ -119,16 +119,16 @@ export default function Hero({ hero, discipline, sharedLocations }) {
                 transition: 'all var(--transition-fast)'
               }}
             >
-              Ver página web
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="16" 
-                height="16" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
+              Visita nuestra web
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
                 strokeLinejoin="round"
                 style={{ marginLeft: '8px' }}
               >

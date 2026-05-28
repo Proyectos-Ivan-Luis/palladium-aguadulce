@@ -29,10 +29,10 @@ export default function BachataPage() {
 
       <main>
         {/* 2. Sección Hero (Above the fold) */}
-        <Hero 
-          hero={heroDataWithFallback(bachataData.hero)} 
-          discipline={bachataData.discipline} 
-          sharedLocations={sharedData.locations} 
+        <Hero
+          hero={heroDataWithFallback(bachataData.hero)}
+          discipline={bachataData.discipline}
+          sharedLocations={sharedData.locations}
         />
 
         {/* 4. Prueba Social y Números (Validación) */}
@@ -48,9 +48,9 @@ export default function BachataPage() {
         <Faq faq={bachataData.faq} />
 
         {/* 7. Cierre con Urgencia (CTA Final) */}
-        <FooterCTA 
-          footerCta={bachataData.footerCta} 
-          whatsapp={bachataData.whatsapp} 
+        <FooterCTA
+          footerCta={bachataData.footerCta}
+          whatsapp={bachataData.whatsapp}
           sharedLocations={sharedData.locations}
           discipline={bachataData.discipline}
         />
@@ -65,7 +65,7 @@ export default function BachataPage() {
 // Función auxiliar simple para garantizar que no haya crash de datos
 function heroDataWithFallback(hero) {
   return {
-    heading: hero?.heading || "Aprende a Bailar",
+    //heading: hero?.heading || "Aprende a Bailar",
     headingAccent: hero?.headingAccent || "Bachata",
     headingSuffix: hero?.headingSuffix || "en Roquetas y El Ejido",
     subheading: hero?.subheading || "Clases dinámicas sin experiencia ni pareja previa.",

@@ -52,6 +52,7 @@ export default function Method({ method }) {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

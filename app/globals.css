@@ -330,7 +330,7 @@ ol {
 
 .hero h1 em {
   font-style: italic;
-  color: var(--accent-cta);
+  color: var(--gray-200);
 }
 
 .hero h2 {
