@@ -43,11 +43,11 @@ export default function Faq({ faq }) {
               {faq.items.map((item, idx) => {
                 const isActive = activeIndex === idx;
                 return (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     className={`faq-item ${isActive ? 'active' : ''}`}
                   >
-                    <button 
+                    <button
                       className="faq-question"
                       onClick={() => toggleAccordion(idx)}
                       aria-expanded={isActive}
@@ -55,7 +55,7 @@ export default function Faq({ faq }) {
                       {item.question}
                       <span className="faq-icon" />
                     </button>
-                    
+
                     <div className="faq-answer">
                       <div className="faq-answer-inner">
                         <p>{item.answer}</p>
@@ -74,18 +74,18 @@ export default function Faq({ faq }) {
                 {(() => {
                   // Definimos las 5 fotos reales a mostrar consecutivamente
                   const slideImages = [
-                    "/assets/images/imagen-bachata-1.jpg",
-                    "/assets/images/imagen-bachata-1-modified.jpg",
-                    "/assets/images/imagen-bachata-2.jpg",
-                    "/assets/images/imagen-bachata-2-modified.jpg",
-                    "/assets/images/imagen-bachata-1.jpg"
+                    "/assets/images/palladiumfotostock3.jpeg",
+                    "/assets/images/palladiumfotostock5.jpeg",
+                    "/assets/images/palladiumfotostock2.jpeg",
+                    "/assets/images/palladiumfotostock1.jpeg",
+                    "/assets/images/palladiumfotostock4pa.jpeg"
                   ];
 
                   return slideImages.map((src, idx) => {
                     const isActive = activeSlide === idx;
                     return (
-                      <div 
-                        key={idx} 
+                      <div
+                        key={idx}
                         className={`faq-carousel-slide ${isActive ? 'active' : ''}`}
                         style={{
                           display: isActive ? 'block' : 'none',
@@ -97,9 +97,9 @@ export default function Faq({ faq }) {
                         }}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img 
-                          src={src} 
-                          alt={`Alumnos de la academia Palladium bailando - Foto ${idx + 1}`} 
+                        <img
+                          src={src}
+                          alt={`Alumnos de la academia Palladium bailando - Foto ${idx + 1}`}
                           style={{
                             width: '100%',
                             height: '100%',
@@ -108,7 +108,7 @@ export default function Faq({ faq }) {
                           }}
                         />
                         {/* Sutil overlay degradado acromático */}
-                        <div 
+                        <div
                           style={{
                             position: 'absolute',
                             inset: 0,
@@ -140,15 +140,15 @@ export default function Faq({ faq }) {
               </div>
 
               {/* Botones de navegación del carrusel */}
-              <button 
-                className="faq-carousel-btn prev" 
+              <button
+                className="faq-carousel-btn prev"
                 onClick={prevSlide}
                 aria-label="Foto anterior"
               >
                 ‹
               </button>
-              <button 
-                className="faq-carousel-btn next" 
+              <button
+                className="faq-carousel-btn next"
                 onClick={nextSlide}
                 aria-label="Siguiente foto"
               >
@@ -158,8 +158,8 @@ export default function Faq({ faq }) {
               {/* Indicadores de puntitos */}
               <div className="faq-carousel-dots">
                 {[...Array(totalSlides)].map((_, idx) => (
-                  <button 
-                    key={idx} 
+                  <button
+                    key={idx}
                     className={`faq-carousel-dot ${activeSlide === idx ? 'active' : ''}`}
                     onClick={() => setActiveSlide(idx)}
                     aria-label={`Ir a foto ${idx + 1}`}

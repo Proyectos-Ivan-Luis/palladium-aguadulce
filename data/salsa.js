@@ -8,12 +8,12 @@ export const salsaData = {
   hero: {
     // heading: "¿Buscas clases de salsa en Roquetas de Mar o El Ejido?",
     headingAccent: "Aprende",
-    headingSuffix: "a bailar con el Método Palladium",
+    headingSuffix: "a bailar Salsa con el Método Palladium",
     subheading:
       "¿Buscas clases de salsa en Roquetas de Mar o El Ejido? La escuela de salsa pensada para personas que empiezan desde cero. Clases divertidas, dinámicas y sin necesidad de traer pareja. ¡Acepta el desafío y empieza a disfrutar esta misma semana!",
-    formTitle: "Apúntate a nuestras clases",
+    formTitle: "Reservar mi clase gratis",
     ctaText: "Apuntarme a clases de Salsa",
-    backgroundImage: "/assets/images/hero-salsa.png",
+    backgroundImage: "/assets/images/palladiumfotostock6.jpeg",
   },
   method: {
     sectionLabel: "El Método Palladium",
@@ -37,7 +37,7 @@ export const salsaData = {
         icon: "clock",
         title: "Flexibilidad Horaria",
         description:
-          "Amplia variedad de grupos de lunes a viernes (19:00 a 23:00) para que desconectes al salir de trabajar.",
+          "Amplia variedad de grupos de lunes a viernes (17:00 a 23:30) para que desconectes al salir de trabajar.",
       },
     ],
   },
@@ -72,6 +72,16 @@ export const salsaData = {
     title: "Derribando Objeciones",
     items: [
       {
+        question: "¿La primera clase es realmente gratis y sin compromiso?",
+        answer:
+          "¡Totalmente! Es 100% gratuita. Diseñamos esta primera sesión para que vengas a conocernos, descubras nuestras instalaciones en Roquetas o El Ejido, pruebes el \"Método Palladium\" y sientas la buena vibra del grupo. Vienes, disfrutas de la clase y, si al terminar decides que el baile no es lo tuyo, no habrás pagado absolutamente nada. No hay letra pequeña ni contratos: el riesgo para ti es cero.",
+      },
+      {
+        question: "¿Cómo puedo activar la promoción del 50% de descuento en el primer mes?",
+        answer:
+          "Esta ventaja es un incentivo exclusivo para las personas que solicitan información a través de esta página web. Para asegurarla, solo tienes que rellenar el formulario de inscripción o pulsar el botón de WhatsApp para ponerte en contacto con nosotros hoy mismo. Al hacerlo, tu primera mensualidad se reducirá automáticamente a la mitad, dándote cuatro semanas completas para aprender a bailar y engancharte al ritmo ahorrando dinero.",
+      },
+      {
         question: "¿Es necesario ir con pareja a las clases de salsa?",
         answer:
           "Para nada. En nuestra academia de baile rotamos constantemente de pareja durante la clase. Es la mejor forma de aprender a guiar, seguir el ritmo y, de paso, conocer gente nueva en un ambiente increíble.",
@@ -89,13 +99,13 @@ export const salsaData = {
     ],
   },
   footerCta: {
-    title: "Las Plazas Son Estrictamente Limitadas",
+    title: "¡50% de Descuento en tu Primer Mes de Salsa!",
     subtitle:
-      "Las plazas para los nuevos grupos de salsa en Roquetas y El Ejido son estrictamente limitadas este mes para garantizar la calidad de la enseñanza. ¡No te quedes mirándolo desde fuera y ven a vivirlo!",
+      "Aprovecha nuestra promoción exclusiva web para nuevos alumnos y empieza a bailar a mitad de precio. Disfruta de instalaciones climatizadas, profesores experimentados y un método eficaz diseñado para que aprendas rápido. ¡Plazas con descuento limitadas!",
     ctaText: "Apuntarme a clases de Salsa",
   },
   whatsapp: {
-    number: "34600000000",
-    message: "Hola, me interesa apuntarme a las clases de Salsa en Palladium.",
+    number: "34622169189",
+    message: "Hola! Estoy interesado en vuestras clases",
   },
 };

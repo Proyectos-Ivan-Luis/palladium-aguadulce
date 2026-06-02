@@ -117,8 +117,48 @@ export default function Locations({ locations }) {
             </div>
           ))}
         </div>
+      </div> {/* Cierre del container principal */}
+
+      {/* Banner Promocional Proximidad Local (Tira de Ancho Completo) */}
+      <div className="promo-banner-locations-strip" style={{
+        width: '100%',
+        background: '#FFFFFF',
+        borderTop: '1px solid rgba(0,0,0,0.06)',
+        borderBottom: '1px solid rgba(0,0,0,0.06)',
+        boxShadow: 'var(--shadow-sm)',
+        padding: '0.9rem 1rem',
+        textAlign: 'center',
+        fontFamily: 'var(--font-body)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '10px',
+        flexWrap: 'wrap',
+        margin: '3.5rem 0 2rem 0'
+      }}>
+        <span style={{
+          background: 'var(--black)',
+          color: 'var(--white)',
+          padding: '3px 10px',
+          borderRadius: '4px',
+          fontSize: '0.75rem',
+          fontWeight: '800',
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em'
+        }}>DESCUENTO EXCLUSIVO</span>
+        <span style={{
+          fontSize: '1.05rem',
+          fontWeight: '600',
+          color: 'var(--black)',
+          lineHeight: '1.4'
+        }}>
+          Aprende más por menos: <strong>50% de descuento en tu mensualidad de inicio.</strong>
+        </span>
+      </div>
+
+      <div className="container">
         {/* Botón de conversión intermedio */}
-        <div style={{ textAlign: 'center', marginTop: 'var(--space-xl)' }}>
+        <div style={{ textAlign: 'center', marginTop: '0' }}>
           <a
             href="#hero-form-section"
             className="btn btn-cta"

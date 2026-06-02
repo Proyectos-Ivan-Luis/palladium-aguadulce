@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 export default function Hero({ hero, discipline, sharedLocations }) {
   const [formData, setFormData] = useState({
     nombre: '',
+    apellidos: '',
     telefono: '',
     ubicacion: sharedLocations[0]?.name || 'Roquetas de Mar'
   });
@@ -15,18 +16,36 @@ export default function Hero({ hero, discipline, sharedLocations }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.nombre || !formData.telefono) {
-      alert('Por favor, completa todos los campos.');
+    if (!formData.nombre || !formData.apellidos || !formData.telefono) {
+      alert('Por favor, completa todos los campos obligatorios.');
       return;
     }
 
     setStatus('loading');
 
-    // Simular envío de leads ultra rápido para Google Ads
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          nombre: formData.nombre,
+          apellidos: formData.apellidos,
+          telefono: formData.telefono,
+          ubicacion: formData.ubicacion,
+          disciplina: discipline || 'Salsa'
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Error en el servidor al enviar los datos');
+      }
+
       setStatus('success');
+
       // Disparar evento de conversión de Google Ads si estuviera configurado
       if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'conversion', {
@@ -35,7 +54,11 @@ export default function Hero({ hero, discipline, sharedLocations }) {
           'currency': 'EUR'
         });
       }
-    }, 1000);
+    } catch (error) {
+      console.error('Error al registrar lead:', error);
+      alert('Hubo un problema al reservar tu plaza. Por favor, inténtalo de nuevo.');
+      setStatus('idle');
+    }
   };
 
   return (
@@ -90,6 +113,41 @@ export default function Hero({ hero, discipline, sharedLocations }) {
 
       {/* El overlay debe estar en zIndex 3 pero detras del contenido (que estará en zIndex 10) */}
       <div className="hero-overlay" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65))', position: 'absolute', inset: 0, zIndex: 3, pointerEvents: 'none' }}></div>
+
+      {/* Banner Promocional Superior (Tira de Ancho Completo Absoluta) */}
+      <div className="promo-banner-top-strip" style={{
+        position: 'absolute',
+        top: '70px',
+        left: 0,
+        right: 0,
+        background: '#000000',
+        borderBottom: '1.5px solid rgba(255,255,255,0.12)',
+        color: '#FFFFFF',
+        textAlign: 'center',
+        padding: '0.85rem 1rem',
+        fontSize: '1.05rem',
+        fontWeight: '600',
+        letterSpacing: '0.04em',
+        zIndex: 20,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '10px',
+        boxShadow: '0 4px 15px rgba(0,0,0,0.25)',
+        flexWrap: 'wrap'
+      }}>
+        <span style={{
+          background: '#FFAA00',
+          color: '#000000',
+          padding: '2px 8px',
+          borderRadius: '4px',
+          fontSize: '0.7rem',
+          fontWeight: '800',
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em'
+        }}>PROMO INICIO</span>
+        <span>Empieza a bailar a mitad de precio. <strong>¡50% de descuento en tu primer mes!</strong></span>
+      </div>
 
       <div className="hero-content" style={{ position: 'relative', zIndex: 10 }}>
         <div className="hero-text">
@@ -169,8 +227,21 @@ export default function Hero({ hero, discipline, sharedLocations }) {
                     id="nombre"
                     name="nombre"
                     required
-                    placeholder="Ej. María García"
+                    placeholder="Ej. María"
                     value={formData.nombre}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className="form-field">
+                  <label htmlFor="apellidos">Tus Apellidos</label>
+                  <input
+                    type="text"
+                    id="apellidos"
+                    name="apellidos"
+                    required
+                    placeholder="Ej. García López"
+                    value={formData.apellidos}
                     onChange={handleChange}
                   />
                 </div>

@@ -142,7 +142,7 @@ export default function SocialProof({ socialProof }) {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/assets/images/imagen-bachata-2.jpg"
+            src="/assets/images/palladiumfotostock5.jpeg"
             alt="Comunidad Palladium bailando salsa y bachata"
             style={{
               width: '100%',
@@ -198,8 +198,48 @@ export default function SocialProof({ socialProof }) {
           ))}
         </div>
 
+      </div> {/* Cierre del container principal */}
+
+      {/* Banner Promocional Prueba Social (Tira de Ancho Completo) */}
+      <div className="promo-banner-social-strip" style={{
+        width: '100%',
+        background: '#FFFFFF',
+        borderTop: '1px solid rgba(0,0,0,0.06)',
+        borderBottom: '1px solid rgba(0,0,0,0.06)',
+        boxShadow: 'var(--shadow-sm)',
+        padding: '0.9rem 1rem',
+        textAlign: 'center',
+        fontFamily: 'var(--font-body)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '10px',
+        flexWrap: 'wrap',
+        margin: '3.5rem 0 2rem 0'
+      }}>
+        <span style={{
+          background: 'var(--accent-whatsapp)',
+          color: '#FFFFFF',
+          padding: '3px 10px',
+          borderRadius: '4px',
+          fontSize: '0.75rem',
+          fontWeight: '800',
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em'
+        }}>CLASE DE PRUEBA</span>
+        <span style={{
+          fontSize: '1.05rem',
+          fontWeight: '600',
+          color: 'var(--black)',
+          lineHeight: '1.4'
+        }}>
+          Ven, baila y decide. <strong>¡Primera clase 100% gratuita!</strong>
+        </span>
+      </div>
+
+      <div className="container">
         {/* Botón de conversión intermedio */}
-        <div style={{ textAlign: 'center', marginTop: 'var(--space-xl)' }}>
+        <div style={{ textAlign: 'center', marginTop: '0' }}>
           <a
             href="#hero-form-section"
             className="btn btn-cta"

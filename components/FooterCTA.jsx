@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discipline }) {
   const [formData, setFormData] = useState({
     nombre: '',
+    apellidos: '',
     telefono: '',
     ubicacion: sharedLocations?.[0]?.name || 'Roquetas de Mar'
   });
@@ -15,18 +16,36 @@ export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discip
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.nombre || !formData.telefono) {
-      alert('Por favor, completa todos los campos.');
+    if (!formData.nombre || !formData.apellidos || !formData.telefono) {
+      alert('Por favor, completa todos los campos obligatorios.');
       return;
     }
-    
+
     setStatus('loading');
-    
-    // Simular envío de leads ultra rápido para Google Ads
-    setTimeout(() => {
+
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          nombre: formData.nombre,
+          apellidos: formData.apellidos,
+          telefono: formData.telefono,
+          ubicacion: formData.ubicacion,
+          disciplina: discipline || 'Salsa'
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Error en el servidor al enviar los datos');
+      }
+
       setStatus('success');
+
       // Disparar evento de conversión
       if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'conversion', {
@@ -35,7 +54,11 @@ export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discip
           'currency': 'EUR'
         });
       }
-    }, 1000);
+    } catch (error) {
+      console.error('Error al registrar lead:', error);
+      alert('Hubo un problema al reservar tu plaza. Por favor, inténtalo de nuevo.');
+      setStatus('idle');
+    }
   };
 
   const whatsappUrl = `https://wa.me/${whatsapp.number}?text=${encodeURIComponent(whatsapp.message)}`;
@@ -50,11 +73,11 @@ export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discip
           </p>
 
           {/* Formulario Vertical de Conversión Final */}
-          <div 
-            className="hero-form-wrapper" 
-            style={{ 
-              backgroundColor: '#111111', 
-              border: '1px solid #333', 
+          <div
+            className="hero-form-wrapper"
+            style={{
+              backgroundColor: '#111111',
+              border: '1px solid #333',
               color: '#FFFFFF',
               textAlign: 'left',
               padding: '1.5rem',
@@ -70,8 +93,8 @@ export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discip
                 <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
                   Hemos recibido tus datos correctamente. Un asesor de Palladium se pondrá en contacto contigo en las próximas 24 horas.
                 </p>
-                <button 
-                  onClick={() => setStatus('idle')} 
+                <button
+                  onClick={() => setStatus('idle')}
                   className="btn btn-cta"
                   style={{ width: '100%', backgroundColor: '#FFFFFF', color: '#000000', border: '1px solid #FFFFFF' }}
                 >
@@ -81,9 +104,9 @@ export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discip
             ) : (
               <>
                 <h3 className="hero-form-title" style={{ color: '#FFFFFF', fontSize: '1.15rem', marginBottom: '1.25rem' }}>
-                  Apúntate a nuestras clases
+                  Prueba una clase gratis
                 </h3>
-                
+
                 <form onSubmit={handleSubmit} className="hero-form">
                   <div className="form-field">
                     <label htmlFor="footer-nombre" style={{ color: 'rgba(255,255,255,0.5)' }}>Tu Nombre</label>
@@ -92,8 +115,26 @@ export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discip
                       id="footer-nombre"
                       name="nombre"
                       required
-                      placeholder="Ej. María García"
+                      placeholder="Ej. María"
                       value={formData.nombre}
+                      onChange={handleChange}
+                      style={{
+                        backgroundColor: '#222222',
+                        border: '1.5px solid #444',
+                        color: '#FFFFFF'
+                      }}
+                    />
+                  </div>
+
+                  <div className="form-field">
+                    <label htmlFor="footer-apellidos" style={{ color: 'rgba(255,255,255,0.5)' }}>Tus Apellidos</label>
+                    <input
+                      type="text"
+                      id="footer-apellidos"
+                      name="apellidos"
+                      required
+                      placeholder="Ej. García López"
+                      value={formData.apellidos}
                       onChange={handleChange}
                       style={{
                         backgroundColor: '#222222',
@@ -143,19 +184,19 @@ export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discip
                     </select>
                   </div>
 
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="btn btn-cta"
                     disabled={status === 'loading'}
-                    style={{ 
-                      width: '100%', 
+                    style={{
+                      width: '100%',
                       marginTop: '0.25rem',
                       backgroundColor: '#FFFFFF',
                       color: '#000000',
                       border: '1px solid #FFFFFF'
                     }}
                   >
-                    {status === 'loading' ? 'Enviando...' : `Apuntarme a clases de ${discipline}`}
+                    {status === 'loading' ? 'Enviando...' : `Reservar plaza gratis de ${discipline}`}
                   </button>
 
                   <p className="form-disclaimer" style={{ color: 'rgba(255,255,255,0.4)', marginTop: '0.5rem' }}>
@@ -168,7 +209,7 @@ export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discip
 
           <div style={{ marginTop: '2.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
             <span style={{ color: 'rgba(255, 255, 255, 0.4)', fontSize: '0.85rem' }}>¿Tienes alguna pregunta directa?</span>
-            <a 
+            <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"

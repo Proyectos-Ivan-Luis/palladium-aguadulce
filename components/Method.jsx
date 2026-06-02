@@ -33,7 +33,17 @@ export default function Method({ method }) {
   };
 
   return (
-    <section className="section section-white" id="metodo">
+    <section
+      className="section section-white"
+      id="metodo"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.60), rgba(255, 255, 255, 0.75)), url("/assets/images/palladiumfotostock1.jpeg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="container">
         <div className="section-title-wrapper">
           <span className="text-caption" style={{ color: 'var(--accent-cta)' }}>

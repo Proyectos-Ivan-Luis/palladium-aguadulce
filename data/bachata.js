@@ -2,18 +2,18 @@ export const bachataData = {
   meta: {
     title: "Clases de Bachata en Roquetas de Mar y El Ejido | Academia Palladium",
     description:
-      "Aprende a bailar desde cero con el Método Palladium. Descubre el ritmo latino que está conquistando las pistas de baile. Clases sin necesidad de pareja.",
+      "Aprende a bailar Bachata desde cero con el Método Palladium. Descubre el ritmo latino que está conquistando las pistas de baile. Clases sin necesidad de pareja.",
   },
   discipline: "Bachata",
   hero: {
     //heading: "Clases de bachata en Roquetas de Mar y El Ejido.",
     headingAccent: "Aprende",
-    headingSuffix: "a bailar desde cero con el Método Palladium.",
+    headingSuffix: "a bailar Bachata desde cero con el Método Palladium.",
     subheading:
       "Descubre el ritmo latino que está conquistando las pistas de baile. Clases dinámicas en Roquetas de Mar y El Ejido para todos los niveles, con profesores experimentados y un ambiente acogedor. No necesitas pareja previa.",
-    formTitle: "Apúntate a nuestras clases",
+    formTitle: "Reservar mi clase gratis",
     ctaText: "Apuntarme a clases de Bachata",
-    backgroundImage: "/assets/images/hero-bachata.png",
+    backgroundImage: "/assets/images/palladiumfotostock6.jpeg",
   },
   method: {
     sectionLabel: "El Método Palladium",
@@ -37,7 +37,7 @@ export const bachataData = {
         icon: "clock",
         title: "Flexibilidad Horaria",
         description:
-          "Amplia variedad de grupos de lunes a viernes (19:00 a 23:00) para que desconectes al salir de trabajar.",
+          "Amplia variedad de grupos de lunes a viernes (17:00 a 23:30) para que desconectes al salir de trabajar.",
       },
     ],
   },
@@ -72,6 +72,16 @@ export const bachataData = {
     title: "Derribando Objeciones",
     items: [
       {
+        question: "¿La primera clase es realmente gratis y sin compromiso?",
+        answer:
+          "¡Totalmente! Es 100% gratuita. Diseñamos esta primera sesión para que vengas a conocernos, descubras nuestras instalaciones en Roquetas o El Ejido, pruebes el \"Método Palladium\" y sientas la buena vibra del grupo. Vienes, disfrutas de la clase y, si al terminar decides que el baile no es lo tuyo, no habrás pagado absolutamente nada. No hay letra pequeña ni contratos: el riesgo para ti es cero.",
+      },
+      {
+        question: "¿Cómo puedo activar la promoción del 50% de descuento en el primer mes?",
+        answer:
+          "Esta ventaja es un incentivo exclusivo para las personas que solicitan información a través de esta página web. Para asegurarla, solo tienes que rellenar el formulario de inscripción o pulsar el botón de WhatsApp para ponerte en contacto con nosotros hoy mismo. Al hacerlo, tu primera mensualidad se reducirá automáticamente a la mitad, dándote cuatro semanas completas para aprender a bailar y engancharte al ritmo ahorrando dinero.",
+      },
+      {
         question: "¿Puedo apuntarme a las clases de bachata sin pareja?",
         answer:
           "¡Por supuesto! La gran mayoría de los alumnos se apuntan solos. En las clases cambiamos continuamente de pareja para que todos bailen con todos, lo que acelera tu aprendizaje y hace las sesiones súper sociables.",
@@ -89,13 +99,13 @@ export const bachataData = {
     ],
   },
   footerCta: {
-    title: "Plazas de Bachata por Tiempo Limitado",
+    title: "¡50% de Descuento en tu Primer Mes de Bachata!",
     subtitle:
-      "Abrimos nuevas plazas de bachata por tiempo limitado para mantener los grupos equilibrados. No dejes pasar la oportunidad de unirte a la familia Palladium en Almería.",
+      "Aprovecha nuestra promoción exclusiva web para nuevos alumnos y empieza a bailar a mitad de precio. Disfruta de instalaciones climatizadas, profesores experimentados y un método eficaz diseñado para que aprendas rápido. ¡Plazas con descuento limitadas!",
     ctaText: "Apuntarme a clases de Bachata",
   },
   whatsapp: {
-    number: "34600000000",
-    message: "Hola, me interesa apuntarme a las clases de Bachata en Palladium.",
+    number: "34622169189",
+    message: "Hola! Estoy interesado en vuestras clases",
   },
 };
