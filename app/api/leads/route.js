@@ -3,11 +3,19 @@ import { getLeads, addLead, deleteLead, updateLeadStatus } from '@/lib/db';
 const CORRECT_PASSWORD = process.env.ADMIN_PASSWORD || 'Palladium*Campaña!';
 
 /**
- * Helper para verificar la contraseña del administrador
+ * Helper para verificar la contraseña del administrador.
+ * Soporta decodificación URL para caracteres especiales como 'ñ' o acentos en cabeceras HTTP en Vercel.
  */
 function verifyAuth(req) {
   const adminPassword = req.headers.get('x-admin-password');
-  return adminPassword === CORRECT_PASSWORD;
+  if (!adminPassword) return false;
+  
+  try {
+    const decoded = decodeURIComponent(adminPassword);
+    return decoded === CORRECT_PASSWORD || adminPassword === CORRECT_PASSWORD;
+  } catch (e) {
+    return adminPassword === CORRECT_PASSWORD;
+  }
 }
 
 /**

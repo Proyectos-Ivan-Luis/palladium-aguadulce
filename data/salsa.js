@@ -51,19 +51,19 @@ export const salsaData = {
     ],
     testimonials: [
       {
-        text: "Llegué sin saber mover los pies y en pocas semanas ya estaba disfrutando en la pista. Los profesores tienen un don para enseñar con humor y paciencia.",
-        author: "María García",
-        role: "Alumna de Salsa · 8 meses",
+        text: "En dos palabras Im Presionante. 🤣\nEs una experiencia, un continuo aprendizaje.\nY los profes una pasada.\n100x 100 recomendable.",
+        author: "José Juan Rodríguez Cuevas",
+        role: "Google Reviewer",
       },
       {
-        text: "Lo mejor de Palladium es el ambiente. Te sientes como en casa desde el primer día. He hecho amigos increíbles y he mejorado mi baile muchísimo.",
-        author: "Carlos Ruiz",
-        role: "Alumno de Salsa · 1 año",
+        text: "Profesionales del baile y terapia para el alma. Imposible describir con palabras lo que cambia tu vida el baile. 10/10",
+        author: "Edwin Portorreal",
+        role: "Local Guide",
       },
       {
-        text: "Tenía vergüenza de ir sola y sin experiencia, pero aquí rotas de pareja constantemente. Es imposible no pasarlo bien. ¡Totalmente recomendable!",
-        author: "Laura Martínez",
-        role: "Alumna de Salsa · 6 meses",
+        text: "Buen ambiente y fabulosos profesores.\nQue más se puede pedir",
+        author: "Saki -san",
+        role: "Google Reviewer",
       },
     ],
   },

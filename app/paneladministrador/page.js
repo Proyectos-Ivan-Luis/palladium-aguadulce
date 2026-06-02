@@ -28,7 +28,7 @@ export default function PanelAdministrador() {
     try {
       const response = await fetch('/api/leads', {
         headers: {
-          'x-admin-password': savedPassword
+          'x-admin-password': encodeURIComponent(savedPassword)
         }
       });
       if (response.ok) {
@@ -55,7 +55,7 @@ export default function PanelAdministrador() {
     try {
       const response = await fetch('/api/leads', {
         headers: {
-          'x-admin-password': password
+          'x-admin-password': encodeURIComponent(password)
         }
       });
 
@@ -89,7 +89,7 @@ export default function PanelAdministrador() {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'x-admin-password': password
+          'x-admin-password': encodeURIComponent(password)
         },
         body: JSON.stringify({
           id,
@@ -116,7 +116,7 @@ export default function PanelAdministrador() {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'x-admin-password': password
+          'x-admin-password': encodeURIComponent(password)
         },
         body: JSON.stringify({
           id,
@@ -146,7 +146,7 @@ export default function PanelAdministrador() {
       const response = await fetch(`/api/leads?id=${id}`, {
         method: 'DELETE',
         headers: {
-          'x-admin-password': password
+          'x-admin-password': encodeURIComponent(password)
         }
       });
 

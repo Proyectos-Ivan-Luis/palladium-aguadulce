@@ -314,7 +314,7 @@ ol {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: var(--space-lg) var(--container-padding);
+  padding: 6.5rem var(--container-padding) var(--space-lg);
   max-width: var(--container-max);
   margin: 0 auto;
 }
@@ -1040,15 +1040,15 @@ ol {
   background-size: cover;
   background-repeat: no-repeat;
   filter: grayscale(100%) contrast(1.1) brightness(0.78);
-  background-position: 82% center;
-  /* Mobile: centra la pareja que está a la derecha */
+  background-position: center center;
+  /* Mobile: Centrado perfecto para evitar recortar la foto */
   transition: background-position var(--transition-slow);
 }
 
 @media (min-width: 768px) {
   .hero-bg-image {
-    background-position: right center;
-    /* Desktop: desplaza la pareja a la derecha para acompañar el formulario */
+    background-position: 82% center;
+    /* Tablet & Ordenador: mantiene el encuadre original del 82% a la derecha */
   }
 }
 

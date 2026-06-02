@@ -51,19 +51,19 @@ export const bachataData = {
     ],
     testimonials: [
       {
-        text: "La bachata siempre me pareció difícil hasta que probé Palladium. Los profes te enseñan a sentir la música, no solo a memorizar pasos. Es adictivo.",
-        author: "Ana López",
-        role: "Alumna de Bachata · 10 meses",
+        text: "En dos palabras Im Presionante. 🤣\nEs una experiencia, un continuo aprendizaje.\nY los profes una pasada.\n100x 100 recomendable.",
+        author: "José Juan Rodríguez Cuevas",
+        role: "Google Reviewer",
       },
       {
-        text: "Vine con mi novia para hacer algo diferente juntos y ahora venimos los dos solos a distintas clases. El ambiente es tan bueno que ya es parte de nuestra vida.",
-        author: "David Fernández",
-        role: "Alumno de Bachata · 10 meses",
+        text: "Profesionales del baile y terapia para el alma. Imposible describir con palabras lo que cambia tu vida el baile. 10/10",
+        author: "Edwin Portorreal",
+        role: "Local Guide",
       },
       {
-        text: "Nunca pensé que podría bailar bachata sensual. Aquí me enseñaron desde cero con mucho respeto y profesionalidad. Ahora no puedo parar.",
-        author: "Sofía Navarro",
-        role: "Alumna de Bachata · 4 meses",
+        text: "Buen ambiente y fabulosos profesores.\nQue más se puede pedir",
+        author: "Saki -san",
+        role: "Google Reviewer",
       },
     ],
   },
