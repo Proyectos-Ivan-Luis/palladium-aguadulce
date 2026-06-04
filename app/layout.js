@@ -1,5 +1,6 @@
 import { Playfair_Display, Montserrat } from 'next/font/google';
 import './globals.css';
+import Script from "next/script";
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -31,7 +32,23 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${playfair.variable} ${montserrat.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18214353021"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18214353021');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
