@@ -18,6 +18,7 @@ export default function Hero({ hero, discipline, sharedLocations }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formData.nombre || !formData.apellidos || !formData.telefono) {
       alert('Por favor, completa todos los campos obligatorios.');
       return;
@@ -46,12 +47,12 @@ export default function Hero({ hero, discipline, sharedLocations }) {
 
       setStatus('success');
 
-      // Disparar evento de conversión de Google Ads si estuviera configurado
-      if (typeof window !== 'undefined' && window.gtag) {
+      // Disparar conversión de Google Ads SOLO cuando el lead se ha guardado correctamente
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
         window.gtag('event', 'conversion', {
-          'send_to': 'AW-CONVERSION_ID/LABEL',
-          'value': 1.0,
-          'currency': 'EUR'
+          send_to: 'AW-18214353021/DnwVCOmWjLkcEP3wo-1D',
+          value: 1.0,
+          currency: 'EUR'
         });
       }
     } catch (error) {
@@ -76,6 +77,7 @@ export default function Hero({ hero, discipline, sharedLocations }) {
             zIndex: 1
           }}
         />
+
         {/* Imagen de fondo real si está definida, superpuesta en zIndex 2 */}
         {hero.backgroundImage && (
           <div
@@ -92,72 +94,102 @@ export default function Hero({ hero, discipline, sharedLocations }) {
 
         {/* Leyenda discreta de fondo premium si no hay foto */}
         {!hero.backgroundImage && (
-          <div style={{
-            position: 'absolute',
-            bottom: '30px',
-            left: '30px',
-            color: 'rgba(255, 255, 255, 0.15)',
-            fontSize: '0.75rem',
-            fontFamily: 'var(--font-body)',
-            textTransform: 'uppercase',
-            letterSpacing: '0.15em',
-            borderLeft: '1px solid rgba(255,255,255,0.15)',
-            paddingLeft: '10px',
-            pointerEvents: 'none',
-            zIndex: 3
-          }}>
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '30px',
+              left: '30px',
+              color: 'rgba(255, 255, 255, 0.15)',
+              fontSize: '0.75rem',
+              fontFamily: 'var(--font-body)',
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              borderLeft: '1px solid rgba(255,255,255,0.15)',
+              paddingLeft: '10px',
+              pointerEvents: 'none',
+              zIndex: 3
+            }}
+          >
             HUECO DISPONIBLE PARA IMAGEN DE FONDO DE {discipline.toUpperCase()}
           </div>
         )}
       </div>
 
-      {/* El overlay debe estar en zIndex 3 pero detras del contenido (que estará en zIndex 10) */}
-      <div className="hero-overlay" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65))', position: 'absolute', inset: 0, zIndex: 3, pointerEvents: 'none' }}></div>
+      {/* El overlay debe estar en zIndex 3 pero detrás del contenido, que estará en zIndex 10 */}
+      <div
+        className="hero-overlay"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65))',
+          position: 'absolute',
+          inset: 0,
+          zIndex: 3,
+          pointerEvents: 'none'
+        }}
+      ></div>
 
-      {/* Banner Promocional Superior (Tira de Ancho Completo Absoluta) */}
-      <div className="promo-banner-top-strip" style={{
-        position: 'absolute',
-        top: '70px',
-        left: 0,
-        right: 0,
-        background: '#000000',
-        borderBottom: '1.5px solid rgba(255,255,255,0.12)',
-        color: '#FFFFFF',
-        textAlign: 'center',
-        padding: '0.85rem 1rem',
-        fontSize: '1.05rem',
-        fontWeight: '600',
-        letterSpacing: '0.04em',
-        zIndex: 20,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '10px',
-        boxShadow: '0 4px 15px rgba(0,0,0,0.25)',
-        flexWrap: 'wrap'
-      }}>
-        <span style={{
-          background: '#FFAA00',
-          color: '#000000',
-          padding: '2px 8px',
-          borderRadius: '4px',
-          fontSize: '0.7rem',
-          fontWeight: '800',
-          textTransform: 'uppercase',
-          letterSpacing: '0.05em'
-        }}>PROMO INICIO</span>
-        <span>Empieza a bailar a mitad de precio. <strong>¡50% de descuento en tu primer mes!</strong></span>
+      {/* Banner Promocional Superior */}
+      <div
+        className="promo-banner-top-strip"
+        style={{
+          position: 'absolute',
+          top: '70px',
+          left: 0,
+          right: 0,
+          background: '#000000',
+          borderBottom: '1.5px solid rgba(255,255,255,0.12)',
+          color: '#FFFFFF',
+          textAlign: 'center',
+          padding: '0.85rem 1rem',
+          fontSize: '1.05rem',
+          fontWeight: '600',
+          letterSpacing: '0.04em',
+          zIndex: 20,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '10px',
+          boxShadow: '0 4px 15px rgba(0,0,0,0.25)',
+          flexWrap: 'wrap'
+        }}
+      >
+        <span
+          style={{
+            background: '#FFAA00',
+            color: '#000000',
+            padding: '2px 8px',
+            borderRadius: '4px',
+            fontSize: '0.7rem',
+            fontWeight: '800',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em'
+          }}
+        >
+          PROMO INICIO
+        </span>
+        <span>
+          Empieza a bailar a mitad de precio. <strong>¡50% de descuento en tu primer mes!</strong>
+        </span>
       </div>
 
       <div className="hero-content" style={{ position: 'relative', zIndex: 10 }}>
         <div className="hero-text">
-          <span className="text-caption" style={{ color: 'var(--gray-200)', marginBottom: '1rem', display: 'inline-block' }}>
+          <span
+            className="text-caption"
+            style={{
+              color: 'var(--gray-200)',
+              marginBottom: '1rem',
+              display: 'inline-block'
+            }}
+          >
             Aprende con los mejores
           </span>
+
           <h1>
             {hero.heading} <em>{hero.headingAccent}</em> {hero.headingSuffix}
           </h1>
+
           <h2>{hero.subheading}</h2>
+
           <div style={{ marginBottom: '2.2rem' }}>
             <a
               href="https://palladiumsalsa.es/"
@@ -202,12 +234,28 @@ export default function Hero({ hero, discipline, sharedLocations }) {
           {status === 'success' ? (
             <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
               <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎉</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', marginBottom: '0.5rem', color: 'var(--black)' }}>
+
+              <h3
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.5rem',
+                  marginBottom: '0.5rem',
+                  color: 'var(--black)'
+                }}
+              >
                 ¡Plaza Reservada!
               </h3>
-              <p style={{ color: 'var(--gray-600)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
+
+              <p
+                style={{
+                  color: 'var(--gray-600)',
+                  fontSize: '0.95rem',
+                  marginBottom: '1.5rem'
+                }}
+              >
                 Hemos recibido tus datos correctamente. Un asesor de Palladium se pondrá en contacto contigo en las próximas 24 horas para confirmar tu clase gratuita.
               </p>
+
               <button
                 onClick={() => setStatus('idle')}
                 className="btn btn-cta"
@@ -219,6 +267,7 @@ export default function Hero({ hero, discipline, sharedLocations }) {
           ) : (
             <>
               <h3 className="hero-form-title">{hero.formTitle}</h3>
+
               <form onSubmit={handleSubmit} className="hero-form">
                 <div className="form-field">
                   <label htmlFor="nombre">Tu Nombre</label>
