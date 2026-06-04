@@ -1,18 +1,18 @@
-export const salsaData = {
+export const academyData = {
   meta: {
-    title: "¿Buscas clases de salsa en Roquetas de Mar o El Ejido? | Academia Palladium",
+    title: "Clases de Salsa y Bachata en Roquetas de Mar y El Ejido | Academia Palladium",
     description:
-      "La escuela de salsa pensada para personas que empiezan desde cero. Clases divertidas, dinámicas y sin necesidad de traer pareja. ¡Acepta el desafío!",
+      "Aprende a bailar Salsa y Bachata desde cero con el Método Palladium. Descubre el ritmo latino que está conquistando las pistas de baile. Clases sin necesidad de pareja.",
   },
-  discipline: "Salsa",
+  discipline: "Salsa y Bachata",
   hero: {
-    // heading: "¿Buscas clases de salsa en Roquetas de Mar o El Ejido?",
-    headingAccent: "Aprende",
-    headingSuffix: "a bailar Salsa con el Método Palladium",
+    heading: "Aprende a bailar ",
+    headingAccent: "Salsa y Bachata",
+    headingSuffix: "con el Método Palladium.",
     subheading:
-      "¿Buscas clases de salsa en Roquetas de Mar o El Ejido? La escuela de salsa pensada para personas que empiezan desde cero. Clases divertidas, dinámicas y sin necesidad de traer pareja. ¡Acepta el desafío y empieza a disfrutar esta misma semana!",
-    formTitle: "Reservar mi clase gratis",
-    ctaText: "Apuntarme a clases de Salsa",
+      "Aprende a bailar desde cero. Descubre el ritmo latino. Clases divertidas y para todos los niveles. No necesitas pareja ni experiencia. ¡Empieza esta misma semana!",
+    formTitle: "Reserva tu plaza gratis",
+    ctaText: "Reservar mi clase de prueba",
     backgroundImage: "/assets/images/palladiumfotostock6.jpeg",
   },
   method: {
@@ -23,15 +23,15 @@ export const salsaData = {
     items: [
       {
         icon: "lightning",
-        title: "Salsa Eficaz y Rápida",
+        title: "Salsa y Bachata Fácil",
         description:
-          "Siente la música desde el primer día. Aprende a reconocer el tiempo de la salsa de manera rápida, fluida y sin frustraciones.",
+          "Olvídate de memorizar secuencias rígidas o contar pasos sin sentido. Te enseñamos con tips musicales específicos para que aprendas a reconocer el ritmo, moverte de forma natural y fluida, rápido y sin frustraciones.",
       },
       {
         icon: "shield",
         title: "Ambiente Seguro y Respetuoso",
         description:
-          "Cuidamos al detalle el trato amable y la higiene corporal en la pista para garantizar un ambiente seguro y agradable para todos.",
+          "Una escuela fundada en el respeto, la honestidad y el trato amable para que disfrutes con total tranquilidad.",
       },
       {
         icon: "clock",
@@ -82,27 +82,27 @@ export const salsaData = {
           "Esta ventaja es un incentivo exclusivo para las personas que solicitan información a través de esta página web. Para asegurarla, solo tienes que rellenar el formulario de inscripción o pulsar el botón de WhatsApp para ponerte en contacto con nosotros hoy mismo. Al hacerlo, tu primera mensualidad se reducirá automáticamente a la mitad, dándote cuatro semanas completas para aprender a bailar y engancharte al ritmo ahorrando dinero.",
       },
       {
-        question: "¿Es necesario ir con pareja a las clases de salsa?",
+        question: "¿Es necesario ir con pareja a las clases?",
         answer:
-          "Para nada. En nuestra academia de baile rotamos constantemente de pareja durante la clase. Es la mejor forma de aprender a guiar, seguir el ritmo y, de paso, conocer gente nueva en un ambiente increíble.",
+          "Para nada. La gran mayoría de nuestros alumnos se apuntan solos. En las clases rotamos y cambiamos continuamente de pareja. Es la mejor forma de aprender a guiar, seguir el ritmo y conocer gente nueva en un ambiente de lo más sociable.",
       },
       {
-        question: "Nunca he bailado salsa y tengo mal oído, ¿puedo aprender?",
+        question: "Nunca he bailado ritmos latinos y tengo mal oído, ¿puedo aprender?",
         answer:
-          "El 90% de nuestros alumnos empezaron exactamente igual. El Método Palladium está diseñado específicamente para romper ese bloqueo. Te enseñamos a escuchar los tiempos musicales con humor y paciencia. ¡Garantizado!",
+          "El 90% de las personas que entran por la puerta empiezan exactamente igual. El Método Palladium está diseñado específicamente para romper ese bloqueo. Te enseñamos a escuchar y asimilar los tiempos musicales con humor, paciencia y profesionalidad.",
       },
       {
         question: "¿Qué ropa y zapatos debo llevar?",
         answer:
-          "Ven con ropa cómoda que te permita moverte libremente. Para los pies, cualquier calzado que no se agarre en exceso al suelo es suficiente para empezar. (Si más adelante lo necesitas, en la escuela disponemos de merchandising y zapatos de salsa especializados).",
+          "Ven con ropa casual o cómoda que te permita moverte con libertad. Para los pies, cualquier calzado flexible cuya suela no sea de goma excesivamente adherente (para que puedas girar con facilidad) es más que suficiente para empezar.",
       },
     ],
   },
   footerCta: {
-    title: "¡50% de Descuento en tu Primer Mes de Salsa!",
+    title: "¡50% de Descuento en tu Primer Mes!",
     subtitle:
       "Aprovecha nuestra promoción exclusiva web para nuevos alumnos y empieza a bailar a mitad de precio. Disfruta de instalaciones climatizadas, profesores experimentados y un método eficaz diseñado para que aprendas rápido. ¡Plazas con descuento limitadas!",
-    ctaText: "Apuntarme a clases de Salsa",
+    ctaText: "reservar plaza gratis",
   },
   whatsapp: {
     number: "34622169189",

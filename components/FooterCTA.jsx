@@ -196,7 +196,7 @@ export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discip
                       border: '1px solid #FFFFFF'
                     }}
                   >
-                    {status === 'loading' ? 'Enviando...' : `Reservar plaza gratis de ${discipline}`}
+                    {status === 'loading' ? 'Enviando...' : (footerCta.ctaText || 'Reservar plaza gratis')}
                   </button>
 
                   <p className="form-disclaimer" style={{ color: 'rgba(255,255,255,0.4)', marginTop: '0.5rem' }}>
@@ -226,7 +226,6 @@ export default function FooterCTA({ footerCta, whatsapp, sharedLocations, discip
         <div className="container">
           <p>© {new Date().getFullYear()} Academia de Baile Palladium. Todos los derechos reservados.</p>
           <p style={{ marginTop: '0.25rem', fontSize: '0.75rem', color: '#444444' }}>
-            Diseñado especialmente para dispositivos móviles · Campaña de Conversión Google Ads
           </p>
         </div>
       </footer>

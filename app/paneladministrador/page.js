@@ -13,7 +13,6 @@ export default function PanelAdministrador() {
   // Filtros
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedUbicacion, setSelectedUbicacion] = useState('');
-  const [selectedDisciplina, setSelectedDisciplina] = useState('');
 
   // Cargar contraseña guardada en localStorage si existe
   useEffect(() => {
@@ -181,8 +180,7 @@ export default function PanelAdministrador() {
       (lead.apellidos && lead.apellidos.toLowerCase().includes(searchTerm.toLowerCase())) ||
       lead.telefono.includes(searchTerm);
     const matchesUbicacion = selectedUbicacion ? lead.ubicacion === selectedUbicacion : true;
-    const matchesDisciplina = selectedDisciplina ? lead.disciplina.toLowerCase() === selectedDisciplina.toLowerCase() : true;
-    return matchesSearch && matchesUbicacion && matchesDisciplina;
+    return matchesSearch && matchesUbicacion;
   });
 
   // Estadísticas
@@ -204,12 +202,7 @@ export default function PanelAdministrador() {
     return acc;
   }, {});
 
-  // Disciplinas desglose
-  const disciplinasCount = leads.reduce((acc, lead) => {
-    const key = lead.disciplina.toLowerCase();
-    acc[key] = (acc[key] || 0) + 1;
-    return acc;
-  }, {});
+
 
   // Exportar a CSV
   const exportToCSV = () => {
@@ -451,18 +444,7 @@ export default function PanelAdministrador() {
             </div>
           </div>
 
-          <div className="metric-card">
-            <div className="metric-icon styles">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-            </div>
-            <div className="metric-info">
-              <h3>Disciplinas</h3>
-              <div className="metric-details">
-                <div>Salsa: <strong>{disciplinasCount['salsa'] || 0}</strong></div>
-                <div>Bachata: <strong>{disciplinasCount['bachata'] || 0}</strong></div>
-              </div>
-            </div>
-          </div>
+
         </section>
 
         {/* Barra de Búsqueda y Filtros */}
@@ -488,14 +470,7 @@ export default function PanelAdministrador() {
               <option value="El Ejido">El Ejido</option>
             </select>
 
-            <select
-              value={selectedDisciplina}
-              onChange={(e) => setSelectedDisciplina(e.target.value)}
-            >
-              <option value="">Todas las Disciplinas</option>
-              <option value="salsa">Salsa</option>
-              <option value="bachata">Bachata</option>
-            </select>
+
 
             <button 
               onClick={exportToCSV} 
@@ -573,7 +548,7 @@ export default function PanelAdministrador() {
                           <td>
                             <div className="pref-cell">
                               <span className="lead-ubicacion">{lead.ubicacion}</span>
-                              <span className={`badge-style ${lead.disciplina.toLowerCase()}`}>
+                              <span className={`badge-style ${lead.disciplina.toLowerCase().replace(/\s+/g, '-')}`}>
                                 {lead.disciplina.toUpperCase()}
                               </span>
                             </div>
@@ -656,7 +631,7 @@ export default function PanelAdministrador() {
                         </div>
                         <div className="detail-item">
                           <span className="label">Disciplina:</span>
-                          <span className={`badge-style ${lead.disciplina.toLowerCase()}`}>
+                          <span className={`badge-style ${lead.disciplina.toLowerCase().replace(/\s+/g, '-')}`}>
                             {lead.disciplina.toUpperCase()}
                           </span>
                         </div>
@@ -780,7 +755,7 @@ export default function PanelAdministrador() {
         }
         @media (min-width: 992px) {
           .metrics-section {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
           }
         }
         .metric-card {
@@ -1097,6 +1072,11 @@ export default function PanelAdministrador() {
           background: rgba(50, 180, 255, 0.08);
           color: #0066CC;
           border: 1px solid rgba(50, 180, 255, 0.18);
+        }
+        .badge-style.salsa-y-bachata {
+          background: rgba(0, 0, 0, 0.05);
+          color: #000000;
+          border: 1px solid rgba(0, 0, 0, 0.12);
         }
         .badge-style.desconocida {
           background: #F1F3F5;
