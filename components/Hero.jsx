@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 export default function Hero({ hero, discipline, sharedLocations }) {
   const [formData, setFormData] = useState({
     nombre: '',
-    apellidos: '',
     telefono: '',
     ubicacion: sharedLocations[0]?.name || 'Roquetas de Mar'
   });
@@ -19,7 +18,7 @@ export default function Hero({ hero, discipline, sharedLocations }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.nombre || !formData.apellidos || !formData.telefono) {
+    if (!formData.nombre || !formData.telefono) {
       alert('Por favor, completa todos los campos obligatorios.');
       return;
     }
@@ -34,7 +33,6 @@ export default function Hero({ hero, discipline, sharedLocations }) {
         },
         body: JSON.stringify({
           nombre: formData.nombre,
-          apellidos: formData.apellidos,
           telefono: formData.telefono,
           ubicacion: formData.ubicacion,
           disciplina: discipline || 'Salsa'
@@ -278,19 +276,6 @@ export default function Hero({ hero, discipline, sharedLocations }) {
                     required
                     placeholder="Ej. María"
                     value={formData.nombre}
-                    onChange={handleChange}
-                  />
-                </div>
-
-                <div className="form-field">
-                  <label htmlFor="apellidos">Tus Apellidos</label>
-                  <input
-                    type="text"
-                    id="apellidos"
-                    name="apellidos"
-                    required
-                    placeholder="Ej. García López"
-                    value={formData.apellidos}
                     onChange={handleChange}
                   />
                 </div>
