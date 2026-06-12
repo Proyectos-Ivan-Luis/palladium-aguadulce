@@ -2,6 +2,110 @@
 
 import React, { useState } from 'react';
 
+function PromoBanner() {
+  const getTimeLeft = () => {
+    const deadline = new Date('2026-06-30T23:59:59');
+    const now = new Date();
+    const diff = deadline - now;
+
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
+    return {
+      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((diff / (1000 * 60)) % 60),
+      seconds: Math.floor((diff / 1000) % 60)
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = React.useState(getTimeLeft());
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(getTimeLeft());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const pad = (n) => String(n).padStart(2, '0');
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: '70px',
+        left: 0,
+        right: 0,
+        background: '#000000',
+        borderBottom: '1.5px solid rgba(255,255,255,0.12)',
+        color: '#FFFFFF',
+        textAlign: 'center',
+        padding: '0.7rem 1rem',
+        zIndex: 20,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '12px',
+        flexWrap: 'wrap'
+      }}
+    >
+      <span
+        style={{
+          background: '#FFAA00',
+          color: '#000000',
+          padding: '2px 8px',
+          borderRadius: '4px',
+          fontSize: '0.7rem',
+          fontWeight: '800',
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em',
+          flexShrink: 0
+        }}
+      >
+        OFERTA LIMITADA
+      </span>
+
+      <span style={{ fontSize: '0.95rem', fontWeight: '600' }}>
+        50% dto. en tu primer mes · Termina en:
+      </span>
+
+      <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+        {[
+          { value: timeLeft.days, label: 'días' },
+          { value: timeLeft.hours, label: 'horas' },
+          { value: timeLeft.minutes, label: 'min' },
+          { value: timeLeft.seconds, label: 'seg' }
+        ].map(({ value, label }, i) => (
+          <React.Fragment key={label}>
+            {i > 0 && (
+              <span style={{ fontSize: '1rem', fontWeight: '700', color: '#FFAA00' }}>:</span>
+            )}
+            <div style={{ textAlign: 'center' }}>
+              <div
+                style={{
+                  background: '#FFAA00',
+                  color: '#000000',
+                  borderRadius: '4px',
+                  padding: '2px 7px',
+                  fontSize: '1rem',
+                  fontWeight: '800',
+                  minWidth: '32px',
+                  lineHeight: '1.4'
+                }}
+              >
+                {pad(value)}
+              </div>
+              <div style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.6)', marginTop: '2px' }}>
+                {label}
+              </div>
+            </div>
+          </React.Fragment>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Hero({ hero, discipline, sharedLocations }) {
   const [formData, setFormData] = useState({
     nombre: '',
@@ -126,48 +230,7 @@ export default function Hero({ hero, discipline, sharedLocations }) {
       ></div>
 
       {/* Banner Promocional Superior */}
-      <div
-        className="promo-banner-top-strip"
-        style={{
-          position: 'absolute',
-          top: '70px',
-          left: 0,
-          right: 0,
-          background: '#000000',
-          borderBottom: '1.5px solid rgba(255,255,255,0.12)',
-          color: '#FFFFFF',
-          textAlign: 'center',
-          padding: '0.85rem 1rem',
-          fontSize: '1.05rem',
-          fontWeight: '600',
-          letterSpacing: '0.04em',
-          zIndex: 20,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '10px',
-          boxShadow: '0 4px 15px rgba(0,0,0,0.25)',
-          flexWrap: 'wrap'
-        }}
-      >
-        <span
-          style={{
-            background: '#FFAA00',
-            color: '#000000',
-            padding: '2px 8px',
-            borderRadius: '4px',
-            fontSize: '0.7rem',
-            fontWeight: '800',
-            textTransform: 'uppercase',
-            letterSpacing: '0.05em'
-          }}
-        >
-          PROMO INICIO
-        </span>
-        <span>
-          Empieza a bailar a mitad de precio. <strong>¡50% de descuento en tu primer mes!</strong>
-        </span>
-      </div>
+      <PromoBanner />
 
       <div className="hero-content" style={{ position: 'relative', zIndex: 10 }}>
         <div className="hero-text">
