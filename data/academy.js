@@ -10,7 +10,7 @@ export const academyData = {
     headingAccent: "Salsa y Bachata",
     headingSuffix: "con el Método Palladium.",
     subheading:
-      "Aprende a bailar desde cero. Descubre el ritmo latino. Clases divertidas y para todos los niveles. No necesitas pareja ni experiencia. ¡Empieza esta misma semana!",
+      "Clases de Salsa y Bachata en Roquetas de Mar, Aguadulce o El Ejido. Desde cero, sin pareja ni experiencia. ¡Empieza esta misma semana!",
     formTitle: "Reserva tu plaza gratis",
     ctaText: "Reservar mi clase de prueba",
     backgroundImage: "/assets/images/palladiumfotostock6.jpeg",
